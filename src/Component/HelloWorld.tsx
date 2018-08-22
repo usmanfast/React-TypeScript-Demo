@@ -1,11 +1,15 @@
 import * as React from "react";
 
-export class HelloWorld extends React.Component{
+export class HelloWorld extends React.Component<any>{
 
+    constructor(props)
+    {
+        super(props)
+    }
     render() {
         return (
             <div>
-                <h1>Hello world</h1>
+                <h1>Hello world {this.props.text}</h1>
              </div> 
            
           );

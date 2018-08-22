@@ -4,26 +4,60 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    
+    "test": "jest --coverage",
     "build": "webpack --mode production --config ./webpack.app.config.js --progress --profile",
     "start": "webpack-dev-server --mode development --config ./webpack.dev.server.config.js --display-error-details "
   },
   "dependencies": {
-    
+    "@types/jest": "^23.3.1",
     "@types/node": "~10.1.1",
     "@types/react": "16.3.17",
     "@types/react-dom": "16.0.6",
     "awesome-typescript-loader": "5.0.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.1",
     "html-webpack-plugin": "3.2.0",
+    "jest": "^21.2.1",
+    "jest-enzyme": "^4.0.0",
     "jsdom": "11.10.0",
     "react": "16.4.0",
     "react-dom": "16.4.0",
+    "react-test-renderer": "^16.4.2",
     "source-map-loader": "0.2.3",
+    "ts-jest": "^23.1.4",
     "typescript": "2.8.3",
+    "typescript-babel-jest": "^1.0.5",
     "webpack": "4.8.1",
     "webpack-cli": "2.1.3",
     "webpack-dev-server": "3.1.4",
     "webpack-merge": "4.1.2"
+  },
+  "jest": {
+    "verbose": true,
+    "automock": false,
+    "unmockedModulePathPatterns": [
+      "react"
+    ],
+    "setupFiles": ["<rootDir>/tests/shim.js","<rootDir>/tests/setuptests.js"], 
+    
+    "transform": {
+      "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
+      "\\.(ts|tsx)$": "ts-jest"
+    },
+    "testRegex": "\\.test\\.js$",
+    "moduleFileExtensions": [
+      "js",
+      "tsx",
+      "json"
+    ],
+    "modulePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ]
   },
   "author": "",
   "license": "ISC"

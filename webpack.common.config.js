@@ -35,7 +35,7 @@ module.exports = {
     ],
             
     module: {
-        rules: [            
+        rules: [ 
             {
                 test: /\.(ts|tsx)?$/,
                 use: [
